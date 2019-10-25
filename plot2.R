@@ -19,6 +19,6 @@ twoDaysMeterRading <- twoDaysMeterRading %>%
   mutate(dateTime = dmy_hms(paste(Date, Time, sep = " ")))
 
 ## Plot chart in .png format
-png("plot1.png", width = 480, height = 480)
-with(twoDaysMeterRading, hist(Global_active_power, col="red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)"))
+png("plot2.png", width = 480, height = 480)
+with(twoDaysMeterRading, plot(dateTime, Global_active_power, type="l",main = "", xlab = "", ylab = "Global Active Power (kilowatts)"))
 dev.off()
